@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.0.js"
+    integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+    crossorigin="anonymous"></script>    
+    <script type="text/javascript" src="js/chessboard-1.0.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js.map" type="text/plain"></script>
+    <link rel="stylesheet" href="css/chessboard-1.0.0.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.js" integrity="sha512-oprzqYFJfo4Bx/nNEcSI0xo7ggJrLc+qQ6hrS3zV/Jn0C4dsg4gu+FXW/Vm0jP9CrV7e5e6dcLUYkg3imjfjbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+  
+<style type="text/css">
+    
+</style>
+
+<body>
+    <div class="container h-100">
+        <div class="row justify-content-center align-items-center m-3">
+            <div class="col-6">
+                <div id="myBoard" style="width: 400px"></div>
+            </div>
+            <div class="col-2">
+                <div class="row">
+                    <h2 id='think'style="color:white" hidden>AI is Thinking ...</h2>
+                    <button id="toggleColorBtn" class="btn-warning btn" data-color="w">Swtich Color</button>
+                    <button id="restartBtn" class="btn-warning btn mt-3">Restart Game</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <label>Status:</label>  
+                <div id="status"></div>
+                <label>FEN:</label>
+                <div id="fen"></div>
+                <label>PGN:</label>
+                <div id="pgn"></div>
+            </div>
+        </div>
+        
+        <!-- Color selection popup (hidden by default) -->
+        <div id="colorSelectPopup" class="popup">
+            <div class="popup-content">
+                <h3 style="color: black;">Choose Your Color and the Level of the System</h3>
+                <div class="row mt-5">
+                    <div class="col-12 justify-content-center d-flex color">
+                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="btnradio" id="btnradiowhite" autocomplete="off">
+                            <label id='btnradiowhitel' class="btn btn-outline-primary" for="btnradiowhite">White</label>
+                            <input type="radio" class="btn-check" name="btnradio" id="btnradioblack" autocomplete="off">
+                            <label id='btnradioblackl' class="btn btn-outline-primary" for="btnradioblack">Black</label>
+                        </div>    
+                          
+                    </div>
+                    <div class="col-12 justify-content-center d-flex mt-3 model_name">
+                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                            <input type="radio" class="btn-check" name="btnradiogroup2" id="btnradio1" autocomplete="off">
+                            <label id='btnradio1l' class="btn btn-outline-primary" for="btnradio1">Level 1</label>
+                            <input type="radio" class="btn-check" name="btnradiogroup2" id="btnradio2" autocomplete="off">
+                            <label id='btnradio2l' class="btn btn-outline-primary" for="btnradio2">Level 2</label>
+                            <input type="radio" class="btn-check" name="btnradiogroup2" id="btnradio4" autocomplete="off">
+                            <label id='btnradio4l' class="btn btn-outline-primary" for="btnradio4">Level 3</label>
+                        </div>  
+                    </div>
+                    <button id="startGameBtn" class="btn btn-warning mt-5">Start Game</button>
+                    <button id="cancelGameBtn" class="btn btn-warning mt-3">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        
+        
+    </div>
+</body>
+<script src="js/logic.js" type="text/javascript"></script>
+</html>
+
